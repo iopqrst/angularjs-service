@@ -3,3 +3,4 @@
 .settings/*
 res/a_little_config.txt
 WebRoot/WEB-INF/classes/*
+/bin/
