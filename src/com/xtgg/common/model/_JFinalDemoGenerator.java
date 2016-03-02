@@ -1,12 +1,12 @@
-package com.demo.common.model;
+package com.xtgg.common.model;
 
 import javax.sql.DataSource;
 
-import com.demo.common.config.DemoConfig;
 import com.jfinal.kit.PathKit;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.generator.Generator;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.xtgg.common.config.DemoConfig;
 
 /**
  * 在数据库表有任何变动时，运行一下 main 方法，极速响应变化进行代码重构
@@ -22,19 +22,22 @@ public class _JFinalDemoGenerator {
 	
 	public static void main(String[] args) {
 		// base model 所使用的包名
-		String baseModelPackageName = "com.demo.common.model.base";
+		String baseModelPackageName = "com.xtgg.model.base";
+		
+		System.out.println(PathKit.getWebRootPath());
+		
 		// base model 文件保存路径
-		String baseModelOutputDir = PathKit.getWebRootPath() + "/../src/com/demo/common/model/base";
+		String baseModelOutputDir = PathKit.getWebRootPath() + "/angular-service/src/com/xtgg/model/base";
 		
 		// model 所使用的包名 (MappingKit 默认使用的包名)
-		String modelPackageName = "com.demo.common.model";
+		String modelPackageName = "com.xtgg.model";
 		// model 文件保存路径 (MappingKit 与 DataDictionary 文件默认保存路径)
 		String modelOutputDir = baseModelOutputDir + "/..";
 		
 		// 创建生成器
 		Generator gernerator = new Generator(getDataSource(), baseModelPackageName, baseModelOutputDir, modelPackageName, modelOutputDir);
 		// 添加不需要生成的表名
-		gernerator.addExcludedTable("adv");
+		gernerator.addExcludedTable("ntg_table_name");
 		// 设置是否在 Model 中生成 dao 对象
 		gernerator.setGenerateDaoInModel(true);
 		// 设置是否生成字典文件

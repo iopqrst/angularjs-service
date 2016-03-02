@@ -1,7 +1,6 @@
-package com.demo.common.config;
+package com.xtgg.common.config;
 
 import com.demo.blog.BlogController;
-import com.demo.common.model._MappingKit;
 import com.demo.index.IndexController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -13,6 +12,7 @@ import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.xtgg.model._MappingKit;
 
 /**
  * API引导式配置

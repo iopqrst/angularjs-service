@@ -4,3 +4,4 @@
 jfinal_demo.log
 WebRoot/WEB-INF/classes/*
 /bin/
+res/a_little_config.txt
