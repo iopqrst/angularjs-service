@@ -1,3 +1,4 @@
+package com.xtgg.controller;
 //package com.demo.index;
 //
 //import com.demo.common.model.Blog;
