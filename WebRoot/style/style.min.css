@@ -1,0 +1,804 @@
+.expert-tx,
+.textarea-group,
+.textarea-group-span {
+	overflow: hidden
+}
+
+.handle-table-title,
+.proPackage-title {
+	font-weight: 400;
+	font-size: 14px
+}
+
+.ana-chart-empty-icon,
+.ana-month li,
+.client-caozuo a,
+.follow-r-tab li,
+.handle-btngroup,
+.handle-name li,
+.health-info,
+.health-info-list dd,
+.health-info-list dt,
+.health-info-text,
+.phy-chartbox,
+.phy-info-list li,
+.phy-info-text,
+.sendSMS-type li,
+.tijiao-btngroup,
+.xuhao {
+	display: inline-block
+}
+
+.quyu-btn {
+	margin-right: 15px;
+	margin-left: -10px
+}
+
+.product-wrap {
+	margin-top: 11px
+}
+
+.gray-btn.add-btn {
+	padding: 0 18px;
+	border-radius: 5px;
+	font-size: 14px
+}
+
+.table.product-list-table {
+	margin-top: 15px
+}
+
+.xuhao {
+	width: 24px;
+	text-align: center
+}
+
+.client-caozuo a {
+	width: 90px;
+	margin-right: 10px;
+	cursor: pointer
+}
+
+.client-btn {
+	margin: 0 15px 0 0
+}
+
+.jcdata-tab-wrap {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #ddd;
+	margin-top: 15px
+}
+
+.jcdata-tab {
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%
+}
+
+.jcdata-tab li {
+	float: left;
+	min-width: 40px;
+	padding: 10px 20px;
+	margin-right: -1px;
+	border: 1px solid #ddd;
+	background: #fbfaf8;
+	text-align: center;
+	cursor: pointer
+}
+
+.jcdata-tab .jcdata-tab-cur {
+	border-top: 2px solid #00a2ca;
+	border-bottom: 1px solid #fff;
+	background: #fff
+}
+
+.back-btn {
+	position: absolute;
+	top: 2px;
+	right: 0
+}
+
+.jcdata-tip {
+	font-size: 14px;
+	padding: 15px 0
+}
+
+.jcdata-tip span {
+	color: #e38800
+}
+
+.jcdata-tip i {
+	color: red;
+	font-style: normal
+}
+
+.jcdata-table-s {
+	background: #eaedf1;
+	text-align: center;
+	color: #666
+}
+
+.jcdata-table-s tr td {
+	padding: 8px 20px;
+	border-right: 5px solid #fff;
+	border-bottom: 5px solid #fff
+}
+
+.jcdata-chart {
+	margin: 20px 0
+}
+
+.jcdata-form-title {
+	font-size: 14px;
+	margin: 5px 0 10px;
+	color: #333
+}
+
+.jcdata-table.table td,
+.jcdata-table.table th {
+	border-right: 1px solid #e1e6eb;
+	text-align: center
+}
+
+.textarea-group {
+	width: 500px;
+	margin: 20px 0
+}
+
+.textarea-group p {
+	font-size: 14px;
+	margin: 0 0 10px
+}
+
+.textarea-group textarea {
+	width: 482px;
+	height: 80px;
+	margin-bottom: 10px
+}
+
+.textarea-group input {
+	float: right
+}
+
+.textarea-group textarea[disabled] {
+	background: #eee
+}
+
+.tree-list {
+	margin-left: 100px
+}
+
+.jibing-table-btn {
+	margin: 0 7px
+}
+
+.jibing-table-btn+span {
+	color: #999
+}
+
+.tijiao-btngroup {
+	margin-left: 40%;
+	margin-bottom: 10px
+}
+
+.tijiao-btngroup input {
+	font-size: 14px;
+	margin-right: 22px;
+	line-height: 35px;
+	padding: 0 20px
+}
+
+.expert-tx {
+	width: 200px;
+	height: 200px;
+	margin-left: 7px;
+	border: 1px solid #ebebeb
+}
+
+.expert-tx img {
+	width: 100%;
+	border: none
+}
+
+.edit-wrap {
+	width: 45%;
+	margin-left: 7px
+}
+
+.textarea-group-span textarea {
+	float: left;
+	width: 925px;
+	height: 40px;
+	margin-bottom: 10px
+}
+
+.textarea-group-span span {
+	float: left;
+	line-height: 56px;
+	margin-left: 15px
+}
+
+.proPackage-title {
+	text-align: center;
+	white-space: nowrap;
+	line-height: 2
+}
+
+.proPackage-box p {
+	text-align: left;
+	font-size: 14px;
+	line-height: 1.8;
+	margin-left: 5px
+}
+
+.follow-r-tab li,
+.handle-btngroup-wrap,
+.score-list li {
+	text-align: center
+}
+
+.proNumber-box {
+	padding: 12px;
+	margin-bottom: 10px;
+	background: #f2ffea;
+	border: 1px solid #c7ddb9;
+	color: #090
+}
+
+.proNumber-box h2 {
+	font-size: 14px
+}
+
+.proNumber-box p {
+	margin-top: 5px
+}
+
+.tijiao-btngroup.proNum-btngroup {
+	margin-left: 0
+}
+
+.handle-name {
+	padding: 13px 0 2px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px
+}
+
+.handle-name li {
+	width: 15%;
+	margin-bottom: 12px
+}
+
+.handle-btngroup input {
+	font-size: 14px;
+	margin-right: 16px;
+	line-height: 35px;
+	padding: 0 20px
+}
+
+.follow-r-tab li,
+.score-box span,
+.score-list li {
+	line-height: 30px
+}
+
+.table-follow .checkboxs-wrap {
+	margin-left: 7px
+}
+
+.table-follow .checkboxs-wrap label {
+	color: #000
+}
+
+.score-box input,
+.score-box span {
+	float: left
+}
+
+.score-list {
+	float: left;
+	margin-right: 10px
+}
+
+.score-list li {
+	float: left;
+	padding: 0 12px;
+	background: #eee;
+	cursor: pointer
+}
+
+.score-list li:hover {
+	background: #ccc
+}
+
+.table-follow>tbody>tr>td.follow-r {
+	vertical-align: top;
+	padding: 15px
+}
+
+.follow-r-tab {
+	margin-bottom: 15px
+}
+
+.follow-r-tab li {
+	width: 80px;
+	margin-right: 4px;
+	background: #d9dee4
+}
+
+.follow-r-tab li.follow-tab-cur {
+	background: #546478;
+	color: #fff
+}
+
+.follow-r-list li {
+	margin-bottom: 8px
+}
+
+.follow-r-list textarea {
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	margin-left: 0
+}
+
+.follow-r-list .input-l {
+	width: 255px;
+	margin: 0 5px 0 7px
+}
+
+.table-sendSMS .table-2tr>tbody>tr>td:nth-child(2) {
+	padding: 12px
+}
+
+.table-sendSMS .table-2tr textarea {
+	width: 100%;
+	box-sizing: border-box;
+	margin-left: 0;
+	height: 130px
+}
+
+.table-sendSMS .table-2tr .input-l {
+	margin-left: 0
+}
+
+.sendSMS-type li {
+	width: 25%;
+	text-align: left;
+	margin-left: 15px;
+	line-height: 2
+}
+
+.sendSMS-type .select-l {
+	margin-left: 0
+}
+
+.sendSMS-text li+li {
+	margin-top: 10px
+}
+
+.physical-wrap {
+	width: 98%;
+	margin: 0 auto;
+	position: relative;
+	padding-top: 30px
+}
+
+.physical-wrap h5 {
+	font-size: 14px;
+	color: #999;
+	margin: 0 0 10px 5px
+}
+
+#physical-add-btn {
+	position: absolute;
+	right: 4%;
+	top: 17px
+}
+
+.phy-info-list {
+	font-size: 0;
+	margin-bottom: 12px
+}
+
+.phy-info-list li {
+	font-size: 12px;
+	min-width: 30%;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 3%;
+	margin-bottom: 8px;
+	background: #f9fafc;
+	color: #333
+}
+
+.phy-info {
+	display: inline-block;
+	width: 84px;
+	text-align: right
+}
+
+.phy-info-text {
+	color: #999;
+	white-space: nowrap;
+	padding-right: 10px
+}
+
+.phy-info-text.font-red {
+	color: red
+}
+
+.phy-graybox {
+	width: 96%;
+	padding: 15px;
+	box-sizing: border-box;
+	background: #f9fafc;
+	line-height: 1.8;
+	margin: 0 0 20px
+}
+
+.phy-graybox h2 {
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px
+}
+
+.phy-chartbox {
+	margin: 0 0 20px
+}
+
+.phy-chart-tit {
+	font-size: 16px;
+	color: #999;
+	text-align: center;
+	line-height: 2
+}
+
+.ana-para,
+.phy-para {
+	width: 96%;
+	margin-bottom: 20px
+}
+
+.ana-para li,
+.phy-para li {
+	margin-bottom: 14px
+}
+
+.ana-para h3,
+.phy-para h3 {
+	font-size: 16px;
+	color: #999;
+	margin-bottom: 12px
+}
+
+.phy-tip {
+	font-size: 14px;
+	line-height: 2;
+	margin-bottom: 20px
+}
+
+.phy-planbox {
+	width: 96%
+}
+
+.phy-planbox .gray-btn {
+	padding: 0 22px
+}
+
+.phy-plan-tit {
+	text-align: center;
+	font-size: 24px;
+	color: #000;
+	margin-bottom: 12px
+}
+
+.phy-plan-tit span {
+	vertical-align: middle;
+	margin-right: 10px
+}
+
+.phy-plan-main {
+	position: relative;
+	border: 1px solid #d6d6d6;
+	padding: 20px 20px 0
+}
+
+.phy-plan-main .tijiao-btngroup {
+	margin: 0 0 20px 44%
+}
+
+.phy-play-con {
+	min-height: 100px;
+	margin-bottom: 30px
+}
+
+.phy-plan-sign {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	text-align: right;
+	line-height: 2
+}
+
+.health-wrap {
+	margin-top: 20px;
+	height: 100%
+}
+
+.health-tit {
+	line-height: 34px;
+	text-indent: 20px;
+	color: #333;
+	font-size: 14px;
+	background: #f5f6fa;
+	border: 1px solid #e1e6eb;
+	margin-bottom: 20px
+}
+
+.health-list {
+	margin-left: 46px;
+	margin-bottom: 20px
+}
+
+.health-list dt {
+	font-size: 18px;
+	color: #09c;
+	line-height: 2
+}
+
+.health-list dd {
+	font-size: 12px;
+	color: #333;
+	margin-left: 30px;
+	line-height: 2.4
+}
+
+.health-preface-wrap {
+	position: relative;
+	width: 80%;
+	margin-bottom: 20px;
+	margin-left: 30px;
+	padding-bottom: 80px
+}
+
+.health-preface h3 {
+	font-size: 16px;
+	margin-bottom: 15px
+}
+
+.health-preface p {
+	text-indent: 2em;
+	margin-bottom: 15px;
+	line-height: 2
+}
+
+.health-sign {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	line-height: 2.4
+}
+
+.health-info-list {
+	width: 100%;
+	max-width: 1200px;
+	font-size: 0;
+	margin-bottom: 12px;
+	margin-left: 20px
+}
+
+.health-info-list dt {
+	width: 100%;
+	font-size: 12px;
+	text-indent: 1em;
+	margin-bottom: 12px;
+	color: #999
+}
+
+.health-info-list dd {
+	font-size: 12px;
+	width: 46%;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 4%;
+	margin-bottom: 8px;
+	background: #f9fafc;
+	color: #333
+}
+
+.health-info-list dd.dd-big {
+	width: 96%
+}
+
+.health-info {
+	min-width: 120px;
+	text-align: right
+}
+
+.health-info-text {
+	color: #999;
+	white-space: nowrap;
+	padding-right: 10px
+}
+
+.health-sport-type dd {
+	width: 21%
+}
+
+.analysis-box-tit {
+	font-size: 18px;
+	margin-bottom: 20px
+}
+
+.analysis-box-main {
+	margin-left: 33px
+}
+
+.analysis-table-tit {
+	margin-bottom: 14px
+}
+
+.ana-chart-main,
+.ana-month {
+	margin-bottom: 20px
+}
+
+.table.table-darkgray {
+	width: 60%;
+	max-width: 100%;
+	border-color: #d6d6d6
+}
+
+.table.table-darkgray td,
+.table.table-darkgray th {
+	background: #e8e8e8;
+	border-right: 1px solid #d6d6d6;
+	border-bottom: 1px solid #d6d6d6;
+	text-align: center;
+	color: #333;
+	vertical-align: middle
+}
+
+.table.table-darkgray td {
+	background: #fff
+}
+
+.analysis-chart-wrap {
+	position: relative;
+	width: 60%;
+	max-width: 100%
+}
+
+.analysis-chart-tip {
+	position: absolute;
+	right: 0;
+	top: 7px;
+	text-decoration: underline;
+	font-size: 14px;
+	cursor: pointer
+}
+
+.ana-month li {
+	width: 90px;
+	margin-right: 6px;
+	border: 1px solid #d6d6d6;
+	text-align: center;
+	line-height: 28px;
+	cursor: pointer
+}
+
+.ana-month li.ana-month-cur {
+	border-color: #09c;
+	color: #09c
+}
+
+.ana-chart-empty {
+	line-height: 20px;
+	text-align: center;
+	height: 100px
+}
+
+.ana-chart-empty span {
+	font-size: 18px
+}
+
+.ana-chart-empty-icon {
+	width: 20px;
+	height: 20px;
+	background: url(../images/icon3.jpg);
+	vertical-align: top;
+	margin-right: 8px
+}
+
+.ana-para li {
+	margin-bottom: 25px
+}
+
+.ana-para p {
+	position: relative
+}
+
+.ana-para p .ana-changebtn {
+	position: absolute;
+	right: 0;
+	top: -36px
+}
+
+.health-assessment,
+.health-audit {
+	width: 60%;
+	max-width: 100%;
+	margin-bottom: 20px;
+	margin-left: 33px;
+	line-height: 2
+}
+
+.health-audit {
+	font-size: 16px
+}
+
+.food-plan-p {
+	margin-bottom: 20px;
+	margin-left: 20px;
+	line-height: 2
+}
+
+.health-food-plan {
+	margin: 0 0 20px 55px;
+	width: 60%;
+	max-width: 100%;
+	line-height: 2.8
+}
+
+.health-food-plan h2 {
+	font-size: 18px;
+	color: #999;
+	line-height: 1.5;
+	text-indent: -35px;
+	margin-bottom: 12px
+}
+
+.change-wrap,
+.i-wrap {
+	margin-bottom: 20px;
+	position: relative
+}
+
+.h-fin {
+	position: relative
+}
+
+.footbtns {
+	position: absolute;
+	right: 0
+}
+
+.changebtn-top .footbtns {
+	top: -38px
+}
+
+.changebtn-middle .footbtns {
+	top: 2px
+}
+
+.changebtn-bottom .footbtns {
+	bottom: 2px
+}
+
+.i-wrap .table.table-darkgray td {
+	padding: 3px 12px;
+	text-align: left
+}
+
+.food-table.table td,
+.food-table.table th {
+	border-right: 1px solid #e1e6eb;
+	padding: 8px 18px
+}
+
+.food-table.table th {
+	text-align: center
+}

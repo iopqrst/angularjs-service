@@ -1,0 +1,280 @@
+<div class="main-title-wrap">
+	<h3 class="main-title">客户列表{{testResult}}</h3>
+</div>
+<div class="main-body-wrap">
+	<form method="post">
+		<div class="form-control">
+			<div class="form-row form-border-bottom">
+				<ul class="input-mix-wrap">
+					<li>疾病类型：
+						<input type="checkbox" name="hasDisease" value="13" id="c_13">
+						<label for="c_13">高血压</label>
+						<input type="checkbox" name="hasDisease" value="2" id="c_2">
+						<label for="c_2">高血脂</label>
+						<input type="checkbox" name="hasDisease" value="1" id="c_1">
+						<label for="c_1">糖尿病</label>
+					</li>
+					<li>注册时间：
+						<input type="text" class="input-m" style="margin-right: 7px;">至
+						<input type="text" class="input-m">
+					</li>
+					<li>客户姓名：
+						<input type="text" class="input-m">
+					</li>
+					<li>客户手机号码：
+						<input type="text" class="input-m">
+					</li>
+					<li>购买产品类型：
+						<select class="select-m" name="clientInfo.availableProduct">
+							<option value="">--请选择--</option>
+							<option value="10002">泰康卡</option>
+							<option value="10003">检测仪 + 健康管理泰康卡</option>
+							<option value="10004">检测仪(心电、血氧、血压、血糖)</option>
+							<option value="10005">普通会员服务</option>
+							<option value="10006">1天体验</option>
+							<option value="10007">365阳光卡</option>
+							<option value="10008">商务卡</option>
+							<option value="10009">如意卡560</option>
+							<option value="10010">月度VIP卡</option>
+							<option value="10011">年度VIP卡</option>
+							<option value="10012">季度VIP卡</option>
+							<option value="10013">血糖高管90天vip-3</option>
+							<option value="10014">血糖高管90天vip-4</option>
+							<option value="10015">血糖高管90天vip-5</option>
+							<option value="10016">血糖高管90天vip-1</option>
+							<option value="10017">血糖高管90天vip-2</option>
+							<option value="10018">大特保1元月卡</option>
+							<option value="10019">大特保年卡</option>
+						</select>
+						<li>客户类型：
+							<select class="select-m" name="clientInfo.type" id="type">
+								<option value="">--全部--</option>
+								<option value="1">VIP用户</option>
+								<option value="3">普通用户</option>
+							</select>
+						</li>
+						<li>区域：
+							<input type="text" class="input-m" readonly>
+							<span class="quyu-btn">选择</span></li>
+						<li>
+							<input type="checkbox" name="uploadWeek" id="week-client">
+							<label for="week-client">一周内未上传数据的用户</label>
+						</li>
+						<li>注册来源：
+							<select class="select-m" name="queryCondition.regSource" id="B_regSource">
+								<option value="">--全部--</option>
+								<option value="aijiankang">爱健康</option>
+								<option value="bsksporthealth">动动更健康(Android)</option>
+								<option value="bskyunplateform">云建康管家</option>
+								<option value="crm">客户关系管理系统</option>
+								<option value="DiabetesManagement">血糖高管(IOS)</option>
+								<option value="php_pc_dondoo">动动更健康网站</option>
+								<option value="php_sugar">血糖高管官方网站</option>
+								<option value="sportsbracelet">动动更健康(IOS)</option>
+								<option value="web">云健康系统</option>
+								<option value="bsksugar">血糖高管(Android)</option>
+								<option value="307hospital">307合作医院</option>
+								<option value="bsksugarother">血糖高管（推广</option>
+								<option value="php_hunan_yst">湖南养生堂</option>
+								<option value="xtgg_al">血糖高管（线下）</option>
+								<option value="php_sugar_1000">千人推广</option>
+							</select>
+						</li>
+						<li>
+							<input type="button" class="text-chaxun-btn blue-btn" value="查询">
+						</li>
+				</ul>
+			</div>
+			<div class="form-row clear">
+				<span class="checkboxs-title">客户市场等级：</span>
+				<ul class="checkboxs-wrap">
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_0" value="0">
+						<label for="b_0">黑户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_1" value="1">
+						<label for="b_1">排斥</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_2" value="2">
+						<label for="b_2">较排斥</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_3" value="3">
+						<label for="b_3">一般</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_4" value="4">
+						<label for="b_4">有希望</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_5" value="5">
+						<label for="b_5">潜在客户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_6" value="6">
+						<label for="b_6">过期用户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_7" value="7">
+						<label for="b_7">无糖尿病</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_8" value="8">
+						<label for="b_8">医生邀请客户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_9" value="9">
+						<label for="b_9">无智能机客户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_10" value="10">
+						<label for="b_10">多次未接听电话/挂断</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_19" value="19">
+						<label for="b_19">空号/号码过期</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_11" value="11">
+						<label for="b_11">糖尿病5年以下</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_12" value="12">
+						<label for="b_12">糖尿病5-10年</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_13" value="13">
+						<label for="b_13">糖尿病10年以上</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_14" value="14">
+						<label for="b_14">糖尿病前期</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_15" value="15">
+						<label for="b_15">一型糖尿病</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_16" value="16">
+						<label for="b_16">二型糖尿病</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_17" value="17">
+						<label for="b_17">妊娠糖尿病</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_18" value="18">
+						<label for="b_18">其他类型糖尿病</label>
+					</li>
+					<li>
+						<input type="button" class="blue-btn" value="查询">
+					</li>
+				</ul>
+			</div>
+			<div class="form-row form-margin-top">
+				<ul class="input-mix-wrap">
+					<li>用户标记：
+						<input type="checkbox" name="clientFlag" id="flag_1" value="1">
+						<label for="flag_1">千人推广</label>
+						<input type="checkbox" name="clientFlag" id="flag_2" value="2">
+						<label for="flag_2">&nbsp;不符合</label>
+					</li>
+					<li>邀请类型：
+						<select class="select-m" name="queryCondition.subPass" id="queryCondition_subPass">
+							<option value="" selected="selected">--全部--</option>
+							<option value="1">医生邀请</option>
+							<option value="9">客户邀请</option>
+						</select>
+					</li>
+					<li>客户邀请码：
+						<input type="text" class="input-m">
+					</li>
+					<li>管理人信息：
+						<select class="select-m" name="queryCondition.createUserChain">
+							<option value="">--全部--</option>
+							<option value="500,1,566,46">许春雪</option>
+						</select>
+						<li>
+							<input type="button" class="text-chaxun-btn blue-btn" value="调整管理用户">
+						</li>
+				</ul>
+			</div>
+		</div>
+		<div class="table-wrap">
+			<table class="table">
+				<thead>
+					<tr>
+						<th width="40">选中</th>
+						<th>客户姓名/注册时间</th>
+						<th width="110">电话</th>
+						<th>性别</th>
+						<th>年龄</th>
+						<th>客户类型/市场等级</th>
+						<th>邀请类型</th>
+						<th>所属区域</th>
+						<th>注册来源</th>
+						<th>最近一次上传</th>
+						<th>购买服务</th>
+						<th width="210">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="client in clientList">
+						<td>
+							<input type="checkbox">
+						</td>
+						<td>
+							<a target="" href="javascript:void(0);">{{client.clientName}}</a>
+							<br>{{client.regTime}}</td>
+						<td><a href="javascript:void(0);" title="点击拨号">{{client.mobile}}</a></td>
+						<td>{{client.gender == 0 ? "男":"女"}}</td>
+						<td>{{client.age}}</td>
+						<td>普通用户/一般</td>
+						<td><span ng-if="client.isInvited == 1">{{client.invitedType===1?"医生邀请":"患者邀请"}}</span></td>
+						<td><a href="javascript:;">{{client.areaId | getAreaId}}</a></td>
+						<td>{{client.source | getSource}}</td>
+						<td>{{client.lastUploadTime}}</td>
+						<td></td>
+						<td class="client-caozuo">
+							<a>分配负责人</a>
+							<a>生成健康报告</a>
+							<br>
+							<a>生成简易报告</a>
+							<a>隐形档案</a>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">
+							<input type="checkbox" id="allCheck">
+							<label for="allCheck" class="checks-btn">全选</label>&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" id="noCheck">
+							<label for="noCheck" class="checks-btn">全不选</label>
+						</td>
+						<td colspan="9">
+							<div class="page-wrap">
+								<div class="page-num"><span>共有1条</span>，<span>每页显示20条</span></div>
+								<ul class="page clear">
+									<li class="disabled"><a>«</a></li>
+									<li class="disabled"><a>‹</a></li>
+									<li class="active"><a>1</a></li>
+									<li><a>2</a></li>
+									<li class="disabled"><a>›</a></li>
+									<li class="disabled"><a>»</a></li>
+								</ul>
+
+							</div>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div class="form-row form-margin-top">
+			<input type="button" id="chooseSend" class="blue-btn client-btn" value="选择发送">
+			<input type="button" id="allSend" class="blue-btn client-btn" value="全部发送">
+		</div>
+	</form>
+</div>

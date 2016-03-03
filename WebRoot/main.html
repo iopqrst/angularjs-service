@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="xtggApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style/base.min.css?v=51" />
+		<link rel="stylesheet" href="style/style.min.css?v=51" />
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="logo"></div>
+			<ul class="header-left">
+				<li><a><i class="lingdang"></i><span class="lingdang-num">223</span></a></li>
+				<li><a>异常报警数据：102700个</a></li>
+				<li class="header-task"><a>我的任务335个</a>
+					<button type="button" id="btn-refresh">刷新消息</button>
+				</li>
+			</ul>
+			<ul class="header-right">
+				<li><a>百生康系统管理员</a></li>
+				<li><a>系统管理员</a></li>
+				<li><a>重置密码</a></li>
+				<li><a>[退出]</a></li>
+			</ul>
+		</header>
+
+		<div class="main-wrap nav-mini">
+			<nav class="main-nav">
+				<div class="main-nav-btn"></div>
+				<div class="main-nav-title"><i class="arrow-white"></i><span class="nav-text">我的管理后台</span><b class="icon-gear"></b></div>
+				<ul class="main-nav-list">
+					<li class="nav-cur"><a href="alarm.html"><i class="icon-dbsx"></i><span class="nav-text">待办事项</span></a></li>
+					<li><a href="product_list.html"><i class="icon-cpzx"></i><span class="nav-text">产品中心</span></a></li>
+					<li><a href="bloodpressure_list.html"><i class="icon-jcsj"></i><span class="nav-text">监测数据</span></a></li>
+					<li><a href="client_list.html"><i class="icon-khgl"></i><span class="nav-text">客户管理</span></a></li>
+					<li><a><i class="icon-ddgl"></i><span class="nav-text">订单管理</span></a></li>
+					<li><a><i class="icon-zytzbb"></i><span class="nav-text">中医体质辨别</span></a></li>
+					<li><a><i class="icon-xxgl"></i><span class="nav-text">消息管理</span></a></li>
+					<li><a><i class="icon-zjtd"></i><span class="nav-text">专家团队</span></a></li>
+					<li><a><i class="icon-jkbg"></i><span class="nav-text">健康报告</span></a></li>
+					<li><a><i class="icon-rwgl"></i><span class="nav-text">任务管理</span></a></li>
+					<li><a><i class="icon-xtsz"></i><span class="nav-text">系统设置</span></a></li>
+					<li><a><i class="icon-jybg"></i><span class="nav-text">简易报告</span></a></li>
+					<li><a><i class="icon-xtxygl"></i><span class="nav-text">血糖、血压管理</span></a></li>
+					<li><a><i class="icon-tjfx"></i><span class="nav-text">统计分析</span></a></li>
+					<li><a><i class="icon-xtggpg"></i><span class="nav-text">血糖高管评估</span></a></li>
+					<li><a><i class="icon-shysxx"></i><span class="nav-text">审核医生信息</span></a></li>
+					<li><a><i class="icon-jys"></i><span class="nav-text">记饮食</span></a></li>
+					<li><a><i class="icon-khtj"></i><span class="nav-text">客户统计</span></a></li>
+					<li><a><i class="icon-xxyjys"></i><span class="nav-text">新需要记饮食</span></a></li>
+				</ul>
+			</nav>
+			<div class="main-content-wrap">
+				<div class="main-sidebar">
+					<div class="main-sidebar-title">客户管理</div>
+					<div class="main-sidebar-list">
+						<ul>
+							<li class="sidebar-cur"><a>客户列表</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="main-sidebar-btn-wrap">
+					<div class="main-sidebar-btn sidebar-btn-off"></div>
+					<div class="main-sidebar-btn sidebar-btn-on" style="display:none"></div>
+				</div>
+				<div class="main-content">
+					<div ng-view class="view-frame"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="js/nav.min.js?v=51"></script>
+	<script src="js/scroll.min.js?v=51"></script>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/services.js"></script>
+	</head>
+
+</html>
