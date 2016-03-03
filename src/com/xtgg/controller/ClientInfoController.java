@@ -1,5 +1,7 @@
 package com.xtgg.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
 import java.util.List;
 
 import net.sf.json.JSONArray;
@@ -27,20 +29,30 @@ public class ClientInfoController extends Controller {
 	}
 
 	public void list() {
-
 		String mobile = getPara("mobile");
 		String name = getPara("name");
+
 		String productId = getPara("productId");
-		
+		Date beginTime = getParaToDate("beginTime", null);
+		Date endTime = getParaToDate("endTime", null);
+
 		Clientinfo ci = new Clientinfo();
 		ci.setMobile(mobile);
 		ci.setName(name);
 		ci.setAvailableProduct(productId);
-		
-		QueryCondition qc = new QueryCondition();  //删除一些没有的东西
 
-		Page<Record> page = Clientinfo.dao.queryObject(getParaToInt("pageNo", 1), 10,
-				ci, null);
+		QueryCondition qc = new QueryCondition();
+
+		if (null != beginTime) {
+			qc.setBeginTime(beginTime);
+		}
+
+		if (null != endTime) {
+			qc.setEndTime(endTime);
+		}
+
+		Page<Record> page = Clientinfo.dao.queryObject(
+				getParaToInt("pageNo", 1), 10, ci, qc);
 
 		List<Record> list = page.getList();
 		JSONObject jdata = new JSONObject();
@@ -51,10 +63,10 @@ public class ClientInfoController extends Controller {
 			for (Record record : list) {
 				JSONObject jo = new JSONObject();
 				jo.put("clientId", record.get("id"));
-				jo.put("clientName", record.get("name", ""));
+				jo.put("clientName", record.get("userName", ""));
 				jo.put("mobile", record.get("mobile", ""));
 				jo.put("regTime",
-						DateUtils.longDate(record.getDate("createTime")));
+						DateUtils.format(record.getDate("createTime")));
 				jo.put("age", record.get("age"));
 				jo.put("gender", record.get("gender", -1));
 				jo.put("grade", record.get("bazzaarGrade", ""));
@@ -64,8 +76,8 @@ public class ClientInfoController extends Controller {
 						isInvented(record.getStr("passivityinvite")));
 				jo.put("areaId", record.get("areaId"));
 				jo.put("source", record.get("source", "web"));
-				jo.put("lastUploadTime", DateUtils.longDate(record
-						.getDate("lastUploadDateTime")));
+				jo.put("lastUploadTime",
+						DateUtils.format(record.getDate("lastUploadDateTime")));
 				jo.put("avaliabled", record.get("availableProduct", ""));
 
 				ja.add(jo);

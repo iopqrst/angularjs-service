@@ -123,6 +123,7 @@ public class Clientinfo extends BaseClientinfo<Clientinfo> {
 
 		sqlSuffix += " order by tc.id desc";
 
-		return Db.paginate(pageNumber, pageSize, sqlPrefix, sqlSuffix);
+		return Db.paginate(pageNumber, pageSize, sqlPrefix, sqlSuffix,
+				args.toArray());
 	}
 }

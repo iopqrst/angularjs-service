@@ -17,14 +17,23 @@ var clientServices = angular.module('MyClientServices', []);
 //	})
 //}]);
 
-clientServices.factory('ClientList', ['$http', function($http) {
-	return $http({
-		method: 'get',
-		url: 'http://192.168.1.101/client/list',
-		data: {
-			
+clientServices.factory('Client', ['$http', function($http) {
+	return {
+		list: function(params) {
+			console.info (params );
+			return $http({
+				method: 'post',
+				url: '/client/list',
+				params : {
+					mobile : params.mobile,
+					name : params.name
+				}
+			})
+		},
+		add: function(params) {
+
 		}
-	});
+	};
 }]);
 
 
