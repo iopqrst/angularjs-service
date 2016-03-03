@@ -1,7 +1,6 @@
 package com.xtgg.common.config;
 
-import com.demo.blog.BlogController;
-import com.demo.index.IndexController;
+import com.demo.index.ClientInfoController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -17,7 +16,7 @@ import com.xtgg.model._MappingKit;
 /**
  * API引导式配置
  */
-public class DemoConfig extends JFinalConfig {
+public class XtggConfig extends JFinalConfig {
 	
 	/**
 	 * 配置常量
@@ -32,8 +31,7 @@ public class DemoConfig extends JFinalConfig {
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
-		me.add("/", IndexController.class, "/index");	// 第三个参数为该Controller的视图存放路径
-		me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
+		me.add("/client", ClientInfoController.class, "/index");	// 第三个参数为该Controller的视图存放路径
 	}
 	
 	public static C3p0Plugin createC3p0Plugin() {

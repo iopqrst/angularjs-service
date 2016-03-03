@@ -16,26 +16,26 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 
 	public static void mapping(ActiveRecordPlugin arp) {
-		arp.addMapping("t_areainfo", "id", Areainfo.class);
-		arp.addMapping("t_client_diet", "id", ClientDiet.class);
-		arp.addMapping("t_client_disease_family", "id", ClientDiseaseFamily.class);
-		arp.addMapping("t_client_disease_self", "id", ClientDiseaseSelf.class);
-		arp.addMapping("t_client_extend", "id", ClientExtend.class);
-		arp.addMapping("t_client_family_health", "id", ClientFamilyHealth.class);
-		arp.addMapping("t_client_family_relation", "id", ClientFamilyRelation.class);
-		arp.addMapping("t_client_followup", "id", ClientFollowup.class);
-		arp.addMapping("t_client_health", "id", ClientHealth.class);
-		arp.addMapping("t_client_hobby", "id", ClientHobby.class);
-		arp.addMapping("t_client_last_time", "id", ClientLastTime.class);
-		arp.addMapping("t_client_latest_physical", "id", ClientLatestPhysical.class);
-		arp.addMapping("t_client_mental_health", "id", ClientMentalHealth.class);
-		arp.addMapping("t_client_physical", "id", ClientPhysical.class);
-		arp.addMapping("t_client_questionnaire", "id", ClientQuestionnaire.class);
-		arp.addMapping("t_client_service_remind", "id", ClientServiceRemind.class);
-		arp.addMapping("t_client_upload", "id", ClientUpload.class);
+//		arp.addMapping("t_areainfo", "id", Areainfo.class);
+//		arp.addMapping("t_client_diet", "id", ClientDiet.class);
+//		arp.addMapping("t_client_disease_family", "id", ClientDiseaseFamily.class);
+//		arp.addMapping("t_client_disease_self", "id", ClientDiseaseSelf.class);
+//		arp.addMapping("t_client_extend", "id", ClientExtend.class);
+//		arp.addMapping("t_client_family_health", "id", ClientFamilyHealth.class);
+//		arp.addMapping("t_client_family_relation", "id", ClientFamilyRelation.class);
+//		arp.addMapping("t_client_followup", "id", ClientFollowup.class);
+//		arp.addMapping("t_client_health", "id", ClientHealth.class);
+//		arp.addMapping("t_client_hobby", "id", ClientHobby.class);
+//		arp.addMapping("t_client_last_time", "id", ClientLastTime.class);
+//		arp.addMapping("t_client_latest_physical", "id", ClientLatestPhysical.class);
+//		arp.addMapping("t_client_mental_health", "id", ClientMentalHealth.class);
+//		arp.addMapping("t_client_physical", "id", ClientPhysical.class);
+//		arp.addMapping("t_client_questionnaire", "id", ClientQuestionnaire.class);
+//		arp.addMapping("t_client_service_remind", "id", ClientServiceRemind.class);
+//		arp.addMapping("t_client_upload", "id", ClientUpload.class);
 		arp.addMapping("t_clientinfo", "id", Clientinfo.class);
-		arp.addMapping("t_source_constant", "id", SourceConstant.class);
-		arp.addMapping("t_userinfo", "id", Userinfo.class);
+//		arp.addMapping("t_source_constant", "id", SourceConstant.class);
+//		arp.addMapping("t_userinfo", "id", Userinfo.class);
 	}
 }
 

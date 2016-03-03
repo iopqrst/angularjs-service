@@ -1,5 +1,8 @@
 package com.xtgg.model;
 
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
 import com.xtgg.model.base.BaseClientinfo;
 
 /**
@@ -8,5 +11,24 @@ import com.xtgg.model.base.BaseClientinfo;
 @SuppressWarnings("serial")
 public class Clientinfo extends BaseClientinfo<Clientinfo> {
 	public static final Clientinfo dao = new Clientinfo();
-	
+
+	public Record load(Integer id) {
+		return Db
+				.findFirst(
+						"select * from t_clientinfo where status = ? and id = ?",
+						0, id);
+	}
+
+	public Page<Record> paginate(int pageNumber, int pageSize) {
+		return Db
+				.paginate(
+						pageNumber,
+						pageSize,
+						"SELECT tc.id, tc.gender, tc.age, tc.type, tc.account, tc. NAME userName, tc.mobile, tc.areaId, tc.email,"
+								+ " tc.levelId, tc.bazzaarGrade, tc.createTime, tc.finishPercent, tc.principalId , tc.availableProduct ,"
+								+ " te.lastFollowTime, te.lastUploadDateTime, te.source, te.flag, te.passivityinvite",
+						" FROM t_clientinfo tc RIGHT JOIN ( select DISTINCT(clientId) clientId from "
+								+ " t_client_vs_user z where (z.createUserChain like '500,1%' )) tm  on tc.id = tm.clientId "
+								+ " left JOIN t_client_extend te on tc.id = te.clientId where tc.status = 0 order by tc.id");
+	}
 }
