@@ -12,7 +12,7 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 			Client.list($scope.client).success(function(data) {
 				if (data && data.code == 1) {
 					$scope.clientList = data.data.clientList;
-					$scope.pager = data.data.pager;
+					$scope.pagerinfo = data.data.pager;
 					console.log(data.data.pager);
 				}
 			});

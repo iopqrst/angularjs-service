@@ -9,13 +9,14 @@ clientDirectives.directive('pager', function() {
 		replace: true,
 		restrict: 'A',
 		scope: {
-			page:'=pageObject'
+			pageinfo:'=pageObject'
 		},
 		controller: function($scope, $element) {
-			console.info ($scope.page);
+			console.info ($scope.pageinfo);
 		},
 		link: function(scope, element, attrs, someController) {
-			console.info (scope.page);
+			console.info (scope.pageinfo);
+			
 		}
 	};
 });
