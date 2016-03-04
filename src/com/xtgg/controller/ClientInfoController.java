@@ -1,6 +1,5 @@
 package com.xtgg.controller;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +16,7 @@ import com.xtgg.model.Clientinfo;
 import com.xtgg.utils.DateUtils;
 import com.xtgg.utils.QueryCondition;
 import com.xtgg.utils.StringUtils;
+import com.xtgg.utils.JsonUtils;
 
 /**
  * ClientInfoController
@@ -56,6 +56,9 @@ public class ClientInfoController extends Controller {
 
 		List<Record> list = page.getList();
 		JSONObject jdata = new JSONObject();
+
+		jdata.accumulate("pager", JsonUtils.getJsonObject4JavaPOJO(page,
+				new String[] { "list" }, null));
 
 		if (null != list && list.size() > 0) {
 			JSONArray ja = new JSONArray();

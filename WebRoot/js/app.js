@@ -1,7 +1,7 @@
 'use strict';
 
 /* App Module */
-var xtggApp = angular.module('xtggApp', ['ngRoute', 'ClientControllers', 'ClientFilters', 'MyClientServices']);
+var xtggApp = angular.module('xtggApp', ['ngRoute', 'ClientControllers', 'ClientFilters', 'MyClientServices', 'ClientDirectives']);
 
 xtggApp.config(['$routeProvider',
 	function($routeProvider) {

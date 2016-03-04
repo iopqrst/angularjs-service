@@ -6,11 +6,14 @@ var clientControllers = angular.module('ClientControllers', []);
 clientControllers.controller('ClientListController', ['$scope', 'Client',
 	function($scope, Client) {
 		$scope.client = {};
+		$scope.pagerinfo = {};
 		
 		this.queryList = function(){
 			Client.list($scope.client).success(function(data) {
 				if (data && data.code == 1) {
 					$scope.clientList = data.data.clientList;
+					$scope.pager = data.data.pager;
+					console.log(data.data.pager);
 				}
 			});
 		}
