@@ -1,17 +1,19 @@
 <div class="page-wrap">
 	<div class="page-num">
-		<span>共有{{ conf.totalItems }}条</span>，<span>每页显示{{ conf.itemsPerPage }}条</span>
-		<span>每页<select ng-model="conf.itemsPerPage" ng-options="option for option in conf.perPageOptions " ng-change="changeItemsPerPage()"></select></span>
+		<span>共有{{ conf.totalItems }}条</span>，
+		<span>每页显示<select ng-model="conf.itemsPerPage" ng-options="option for option in conf.perPageOptions " ng-change="changeItemsPerPage()"></select>条</span>
 	</div>
 	<ul class="page clear" pager page-object="pagerinfo">
-		<li ng-class="{disabled: conf.currentPage == 1}" ng-click="prevPage()"><a>«</a></li>
+		<li ng-class="{disabled: conf.currentPage == 1}" ng-click="firstPage()"><a>«</a></li>
 		<li ng-class="{disabled: conf.currentPage == 1}" ng-click="prevPage()"><a>‹</a></li>
 		
 		<li ng-repeat="item in pageList track by $index" ng-class="{active: item == conf.currentPage, separate: item == '...'}" ng-click="changeCurrentPage(item)">
-		<a>{{ item }}</a>
+		<a href="javascript:void(0);">{{ item }}</a>
 		</li>
 		
-		<li ng-class="{disabled: conf.currentPage == conf.numberOfPages}" ng-click="nextPage()"><a>›</a></li>
-		<li ng-class="{disabled: conf.currentPage == conf.numberOfPages}" ng-click="nextPage()"><a>»</a></li>
+		<li ng-class="{disabled: conf.currentPage == conf.totalPage}" ng-click="nextPage()"><a>›</a></li>
+		<li ng-class="{disabled: conf.currentPage == conf.totalPage}" ng-click="lastPage()"><a>»</a></li>
 	</ul>
+	<span><input type="text" class="jump-page-text" ng-model="jumpPageNum"/></span>
+	<button class="gray-btn" style="margin-left: 6px; padding: 2px 8px;" data-ng-click="gotoPage()">GO</button>
 </div>

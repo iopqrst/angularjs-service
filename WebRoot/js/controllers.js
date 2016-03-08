@@ -9,22 +9,20 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 
 		$scope.paginationConf = {
 			currentPage: 1,
-			itemsPerPage: 10
+			itemsPerPage: 5
 		};
 
-		var postData = {
-			pageNo: $scope.paginationConf.currentPage,
-			pageSize: $scope.paginationConf.itemsPerPage
-		}
-
 		this.queryList = function() {
+			$scope.client.pageNo = $scope.paginationConf.currentPage;
+			$scope.client.pageSize = $scope.paginationConf.itemsPerPage;
+
 			Client.list($scope.client).success(function(data) {
 				if (data && data.code == 1) {
 					$scope.clientList = data.data.clientList;
 					$scope.pagerinfo = data.data.pager;
-					
+
 					$scope.paginationConf.totalItems = data.data.pager.totalRow;
-					console.log(data.data.pager);
+					$scope.paginationConf.totalPage = data.data.pager.totalPage;
 				}
 			});
 		}
@@ -35,5 +33,7 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 		$scope.search = function() {
 			that.queryList();
 		}
+
+		$scope.$watch('paginationConf.currentPage + paginationConf.itemsPerPage', this.queryList);
 	}
 ]);
