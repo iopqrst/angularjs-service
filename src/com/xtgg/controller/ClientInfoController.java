@@ -52,7 +52,7 @@ public class ClientInfoController extends Controller {
 		}
 
 		Page<Record> page = Clientinfo.dao.queryObject(
-				getParaToInt("pageNo", 1), 10, ci, qc);
+				getParaToInt("pageNo", 1), getParaToInt("pageSize",10), ci, qc);
 
 		List<Record> list = page.getList();
 		JSONObject jdata = new JSONObject();

@@ -802,3 +802,16 @@
 .food-table.table th {
 	text-align: center
 }
+
+.page-list {
+	border: 1px solid green;
+	height: 30px;
+}
+
+.page-list ul {
+	background: #E38800;
+}
+
+.page-list ul li{
+	float:left;
+}
