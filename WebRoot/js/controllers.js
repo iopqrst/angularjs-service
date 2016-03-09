@@ -9,7 +9,7 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 
 		$scope.paginationConf = {
 			currentPage: 1,
-			itemsPerPage: 5
+			itemsPerPage: 2
 		};
 
 		this.queryList = function() {
@@ -20,6 +20,9 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 				if (data && data.code == 1) {
 					$scope.clientList = data.data.clientList;
 					$scope.pagerinfo = data.data.pager;
+					
+					console.log('this is pager info:');
+					console.info(data.data.pager);
 
 					$scope.paginationConf.totalItems = data.data.pager.totalRow;
 					$scope.paginationConf.totalPage = data.data.pager.totalPage;

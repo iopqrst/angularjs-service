@@ -1,6 +1,10 @@
 'use strict';
 
 /* Directives */
+/**
+ * 参考tmPagination
+ * http://www.cnblogs.com/sword-successful/archive/2015/06/28/4605222.html
+ */
 
 var clientDirectives = angular.module('ClientDirectives', []);
 
@@ -49,7 +53,6 @@ clientDirectives.directive('tmPagination', [function() {
 				// jumpPageNum
 				scope.jumpPageNum = scope.conf.currentPage;
 
-
 				// 如果itemsPerPage在不在perPageOptions数组中，就把itemsPerPage加入这个数组中
 				var perPageOptionsLength = scope.conf.perPageOptions.length;
 				// 定义状态
@@ -70,6 +73,7 @@ clientDirectives.directive('tmPagination', [function() {
 				});
 
 				scope.pageList = [];
+				//scope.conf.pagesLength 最好是奇数，否则你会发现效果不是很漂亮
 				scope.conf.pagesLength = parseInt(scope.conf.pagesLength, 10) ? parseInt(scope.conf.pagesLength, 10) : 3;
 
 				if (scope.conf.totalPage <= scope.conf.pagesLength) {
@@ -79,25 +83,34 @@ clientDirectives.directive('tmPagination', [function() {
 					}
 				} else {
 					var offset = scope.conf.pagesLength - 1;
-					if (scope.conf.currentPage <= offset) {
+					if (scope.conf.currentPage <= Math.ceil(offset / 2)) {
 						// 从1开始
 						for (i = 1; i <= offset + 1; i++) {
 							scope.pageList.push(i);
 						}
 					}
 
-					if (scope.conf.currentPage > offset && scope.conf.currentPage < scope.conf.totalPage) {
-						// 两边都有
-						scope.pageList.push(scope.conf.currentPage - 1);
-						scope.pageList.push(scope.conf.currentPage);
-						scope.pageList.push(scope.conf.currentPage + 1);
+					if (scope.conf.currentPage > Math.ceil(offset / 2)) {
+
+						if (scope.conf.currentPage < (scope.conf.totalPage - Math.ceil(offset / 2))) {
+							// 两边都有
+							for (i = Math.ceil(offset / 2); i >= 1; i--) {
+								scope.pageList.push(scope.conf.currentPage - i);
+							}
+							scope.pageList.push(scope.conf.currentPage);
+							for (i = 1; i <= offset / 2; i++) {
+								scope.pageList.push(scope.conf.currentPage + i);
+							}
+							console.info ('enter if part');
+						} else {
+							console.info ('enter else part');
+							for (var i = offset; i >= 0; i--) {
+								scope.pageList.push(scope.conf.totalPage - i);
+							}
+						}
+
 					}
 
-					if (scope.conf.currentPage == scope.conf.totalPage) {
-						scope.pageList.push(scope.conf.currentPage - 2);
-						scope.pageList.push(scope.conf.currentPage - 1);
-						scope.pageList.push(scope.conf.currentPage);
-					}
 
 					// 总页数大于分页长度（此时分为三种情况：1.左边没有...2.右边没有...3.左右都有...）
 					// 计算中心偏移量
@@ -166,6 +179,14 @@ clientDirectives.directive('tmPagination', [function() {
 				if (scope.jumpPageNum !== '') {
 					scope.conf.currentPage = scope.jumpPageNum;
 				}
+			};
+			
+			//当查询的条数发生变化的时候，重置当前的页数
+			scope.changeItemsPerPage = function(){
+//				if (scope.conf.currentPage > scope.conf.totalPage) {
+//					scope.conf.currentPage = scope.conf.totalPage;
+//				}
+				scope.conf.currentPage = 1;
 			};
 
 			scope.$watch(function() {
