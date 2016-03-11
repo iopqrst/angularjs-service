@@ -34,6 +34,7 @@ clientDirectives.directive('tmPagination', [function() {
 
 			// pageList数组
 			function getPagination() {
+				console.info ( '---------------enter getPagination .... ');
 				// conf.currentPage
 				scope.conf.currentPage = parseInt(scope.conf.currentPage) ? parseInt(scope.conf.currentPage) : 1;
 				// conf.totalItems
@@ -101,46 +102,15 @@ clientDirectives.directive('tmPagination', [function() {
 							for (i = 1; i <= offset / 2; i++) {
 								scope.pageList.push(scope.conf.currentPage + i);
 							}
-							console.info ('enter if part');
+							console.info('enter if part');
 						} else {
-							console.info ('enter else part');
+							console.info('enter else part');
 							for (var i = offset; i >= 0; i--) {
 								scope.pageList.push(scope.conf.totalPage - i);
 							}
 						}
-
 					}
 
-
-					// 总页数大于分页长度（此时分为三种情况：1.左边没有...2.右边没有...3.左右都有...）
-					// 计算中心偏移量
-					//					var offset = (scope.conf.pagesLength - 1) / 2;
-					//					if (scope.conf.currentPage <= offset) {
-					//						// 左边没有...
-					//						for (i = 1; i <= offset + 1; i++) {
-					//							scope.pageList.push(i);
-					//						}
-					//						scope.pageList.push(scope.conf.totalPage);
-					//					} else if (scope.conf.currentPage > scope.conf.totalPage - offset) {
-					//						scope.pageList.push(1);
-					//						for (i = offset + 1; i >= 1; i--) {
-					//							scope.pageList.push(scope.conf.totalPage - i);
-					//						}
-					//						scope.pageList.push(scope.conf.totalPage);
-					//					} else {
-					//						// 最后一种情况，两边都有...
-					//						scope.pageList.push(1);
-					//
-					//						for (i = Math.ceil(offset / 2); i >= 1; i--) {
-					//							scope.pageList.push(scope.conf.currentPage - i);
-					//						}
-					//						scope.pageList.push(scope.conf.currentPage);
-					//						for (i = 1; i <= offset / 2; i++) {
-					//							scope.pageList.push(scope.conf.currentPage + i);
-					//						}
-					//
-					//						scope.pageList.push(scope.conf.totalPage);
-					//					}
 				}
 
 				if (scope.conf.onChange) {
@@ -180,33 +150,18 @@ clientDirectives.directive('tmPagination', [function() {
 					scope.conf.currentPage = scope.jumpPageNum;
 				}
 			};
-			
+
 			//当查询的条数发生变化的时候，重置当前的页数
-			scope.changeItemsPerPage = function(){
-//				if (scope.conf.currentPage > scope.conf.totalPage) {
-//					scope.conf.currentPage = scope.conf.totalPage;
-//				}
-				scope.conf.currentPage = 1;
+			scope.changeItemsPerPage = function() {
+				//scope.conf.currentPage = 1;
 			};
 
 			scope.$watch(function() {
-				var newValue = scope.conf.currentPage + ' ' + scope.conf.totalItems + ' ';
-				// 如果直接watch perPage变化的时候，因为记住功能的原因，所以一开始可能调用两次。
-				//所以用了如下方式处理
-				if (scope.conf.rememberPerPage) {
-					// 由于记住的时候需要特别处理一下，不然可能造成反复请求
-					// 之所以不监控localStorage[scope.conf.rememberPerPage]是因为在删除的时候会undefind
-					// 然后又一次请求
-					if (localStorage[scope.conf.rememberPerPage]) {
-						newValue += localStorage[scope.conf.rememberPerPage];
-					} else {
-						newValue += scope.conf.itemsPerPage;
-					}
-				} else {
-					newValue += scope.conf.itemsPerPage;
-				}
-				return newValue;
+				console.info('currentPage = ' + scope.conf.currentPage + ', totalItems = ' + scope.conf.totalItems + ', itemsPerPage = ' + scope.conf.itemsPerPage);
 
+				var newValue = scope.conf.currentPage + ' ' + scope.conf.totalItems + ' ' + scope.conf.itemsPerPage;
+	
+				return newValue;
 			}, getPagination);
 
 		}
