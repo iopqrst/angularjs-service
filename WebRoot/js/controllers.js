@@ -21,8 +21,8 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 					$scope.clientList = data.data.clientList;
 					$scope.pagerinfo = data.data.pager;
 					
-					console.log('this is pager info:');
-					console.info(data.data.pager);
+					//console.log('this is pager info:');
+					//console.info(data.data.pager);
 
 					$scope.paginationConf.totalItems = data.data.pager.totalRow;
 					$scope.paginationConf.totalPage = data.data.pager.totalPage;

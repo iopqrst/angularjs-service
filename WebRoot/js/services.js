@@ -20,7 +20,7 @@ var clientServices = angular.module('MyClientServices', []);
 clientServices.factory('Client', ['$http', function($http) {
 	return {
 		list: function(params) {
-			console.info(params);
+			//console.info(params);
 			return $http({
 				method: 'post',
 				url: '/client/list',

@@ -20,10 +20,38 @@ clientDirectives.directive('tmPagination', [function() {
 
 			// 变更当前页
 			scope.changeCurrentPage = function(item) {
-				if (item == '...') {
-					return;
-				} else {
-					scope.conf.currentPage = item;
+				scope.conf.currentPage = item;
+			};
+
+			// prevPage
+			scope.prevPage = function() {
+				if (scope.conf.currentPage > 1) {
+					scope.conf.currentPage -= 1;
+				}
+			};
+
+			// nextPage
+			scope.nextPage = function() {
+				if (scope.conf.currentPage < scope.conf.totalPage) {
+					scope.conf.currentPage += 1;
+				}
+			};
+
+			//firstPage
+			scope.firstPage = function() {
+				scope.conf.currentPage = 1;
+			};
+
+			// lastPage
+			scope.lastPage = function() {
+				scope.conf.currentPage = scope.conf.totalPage;
+			};
+
+			// 跳转页
+			scope.gotoPage = function() {
+				scope.jumpPageNum = scope.jumpPageNum.replace(/[^0-9]/g, '');
+				if (scope.jumpPageNum !== '') {
+					scope.conf.currentPage = scope.jumpPageNum;
 				}
 			};
 
@@ -34,7 +62,7 @@ clientDirectives.directive('tmPagination', [function() {
 
 			// pageList数组
 			function getPagination() {
-				console.info ( '---------------enter getPagination .... ');
+				//console.info('---------------enter getPagination .... ');
 				// conf.currentPage
 				scope.conf.currentPage = parseInt(scope.conf.currentPage) ? parseInt(scope.conf.currentPage) : 1;
 				// conf.totalItems
@@ -46,7 +74,9 @@ clientDirectives.directive('tmPagination', [function() {
 				if (scope.conf.currentPage < 1) {
 					scope.conf.currentPage = 1;
 				}
-
+				
+				console.info( 'here -=- > ' + scope.conf.totalPage);
+				
 				if (scope.conf.currentPage > scope.conf.totalPage) {
 					scope.conf.currentPage = scope.conf.totalPage;
 				}
@@ -119,48 +149,11 @@ clientDirectives.directive('tmPagination', [function() {
 				scope.$parent.conf = scope.conf;
 			}
 
-			// prevPage
-			scope.prevPage = function() {
-				if (scope.conf.currentPage > 1) {
-					scope.conf.currentPage -= 1;
-				}
-			};
-
-			// nextPage
-			scope.nextPage = function() {
-				if (scope.conf.currentPage < scope.conf.totalPage) {
-					scope.conf.currentPage += 1;
-				}
-			};
-
-			//firstPage
-			scope.firstPage = function() {
-				scope.conf.currentPage = 1;
-			};
-
-			// lastPage
-			scope.lastPage = function() {
-				scope.conf.currentPage = scope.conf.totalPage;
-			};
-
-			// 跳转页
-			scope.gotoPage = function() {
-				scope.jumpPageNum = scope.jumpPageNum.replace(/[^0-9]/g, '');
-				if (scope.jumpPageNum !== '') {
-					scope.conf.currentPage = scope.jumpPageNum;
-				}
-			};
-
-			//当查询的条数发生变化的时候，重置当前的页数
-			scope.changeItemsPerPage = function() {
-				//scope.conf.currentPage = 1;
-			};
-
 			scope.$watch(function() {
 				console.info('currentPage = ' + scope.conf.currentPage + ', totalItems = ' + scope.conf.totalItems + ', itemsPerPage = ' + scope.conf.itemsPerPage);
 
 				var newValue = scope.conf.currentPage + ' ' + scope.conf.totalItems + ' ' + scope.conf.itemsPerPage;
-	
+
 				return newValue;
 			}, getPagination);
 
