@@ -132,9 +132,7 @@ clientDirectives.directive('tmPagination', [function() {
 							for (i = 1; i <= offset / 2; i++) {
 								scope.pageList.push(scope.conf.currentPage + i);
 							}
-							console.info('enter if part');
 						} else {
-							console.info('enter else part');
 							for (var i = offset; i >= 0; i--) {
 								scope.pageList.push(scope.conf.totalPage - i);
 							}

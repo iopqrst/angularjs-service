@@ -9,7 +9,8 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 
 		$scope.paginationConf = {
 			currentPage: 1,
-			itemsPerPage: 2
+			itemsPerPage: 2,
+			totalPage : 1
 		};
 
 		this.queryList = function() {
