@@ -1,7 +1,7 @@
 <div class="page-wrap" ng-show="conf.totalPage > 0">
 	<div class="page-num">
 		<span>共有{{ conf.totalItems }}条，{{conf.totalPage}}页</span>，
-		<span>每页显示<select ng-model="conf.itemsPerPage" ng-options="option for option in conf.perPageOptions "></select>条</span>
+		<!--<span>每页显示<select ng-model="conf.itemsPerPage" ng-options="option for option in conf.perPageOptions "></select>条</span>-->
 	</div>
 	<ul class="page clear" pager page-object="pagerinfo">
 		<li ng-class="{disabled: conf.currentPage == 1}" ng-click="firstPage()"><a href="javascript:void(0);">«</a></li>

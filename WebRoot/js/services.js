@@ -3,20 +3,6 @@
 /* Services */
 var clientServices = angular.module('MyClientServices', []);
 
-//clientServices.factory('Client', ['$resource', function($resource) {
-//	return $resource('data/:data', {}, {
-//		queryList: {
-//			method: 'GET',
-//			params: {
-//				data: 'client-list.json'
-//			}
-//		},
-//		add: {
-//
-//		}
-//	})
-//}]);
-
 clientServices.factory('Client', ['$http', function($http) {
 	return {
 		list: function(params) {

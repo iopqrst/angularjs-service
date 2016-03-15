@@ -9,8 +9,7 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 
 		$scope.paginationConf = {
 			currentPage: 1,
-			itemsPerPage: 2,
-			totalPage : 1
+			itemsPerPage: 2
 		};
 
 		this.queryList = function() {
@@ -31,7 +30,6 @@ clientControllers.controller('ClientListController', ['$scope', 'Client',
 			});
 		}
 
-		this.queryList(); //init
 		var that = this;
 
 		$scope.search = function() {

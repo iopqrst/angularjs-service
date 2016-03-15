@@ -67,6 +67,8 @@ clientDirectives.directive('tmPagination', [function() {
 				scope.conf.currentPage = parseInt(scope.conf.currentPage) ? parseInt(scope.conf.currentPage) : 1;
 				// conf.totalItems
 				scope.conf.totalItems = parseInt(scope.conf.totalItems);
+				// conf.itemsPerPage
+				scope.conf.itemsPerPage = parseInt(scope.conf.itemsPerPage) ? parseInt(scope.conf.itemsPerPage) : 10;
 
 				// judge currentPage > scope.totalPage
 				if (scope.conf.currentPage < 1) {
@@ -81,6 +83,25 @@ clientDirectives.directive('tmPagination', [function() {
 
 				// jumpPageNum
 				scope.jumpPageNum = scope.conf.currentPage;
+
+				// 如果itemsPerPage在不在perPageOptions数组中，就把itemsPerPage加入这个数组中
+				var perPageOptionsLength = scope.conf.perPageOptions.length;
+				// 定义状态
+				var perPageOptionsStatus;
+				for (var i = 0; i < perPageOptionsLength; i++) {
+					if (scope.conf.perPageOptions[i] == scope.conf.itemsPerPage) {
+						perPageOptionsStatus = true;
+					}
+				}
+				// 如果itemsPerPage在不在perPageOptions数组中，就把itemsPerPage加入这个数组中
+				if (!perPageOptionsStatus) {
+					scope.conf.perPageOptions.push(scope.conf.itemsPerPage);
+				}
+
+				// 对选项进行sort
+				scope.conf.perPageOptions.sort(function(a, b) {
+					return a - b
+				});
 
 				scope.pageList = [];
 				//scope.conf.pagesLength 最好是奇数，否则你会发现效果不是很漂亮
@@ -127,7 +148,10 @@ clientDirectives.directive('tmPagination', [function() {
 			}
 
 			scope.$watch(function() {
-				var newValue = scope.conf.currentPage + ' ' + scope.conf.totalItems;
+				console.info('currentPage = ' + scope.conf.currentPage + ', totalItems = ' + scope.conf.totalItems + ', itemsPerPage = ' + scope.conf.itemsPerPage);
+
+				var newValue = scope.conf.currentPage + ' ' + scope.conf.totalItems + ' ' + scope.conf.itemsPerPage;
+
 				return newValue;
 			}, getPagination);
 
