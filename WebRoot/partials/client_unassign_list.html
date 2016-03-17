@@ -1,0 +1,201 @@
+<div class="main-title-wrap">
+	<h3 class="main-title">未分配客户列表{{testResult}}</h3>
+</div>
+<div class="main-body-wrap">
+	<form method="post">
+		<div class="form-control">
+			<div class="form-row form-border-bottom">
+				<ul class="input-mix-wrap">
+					<li>客户姓名：
+						<input type="text" class="input-m" ng-model="client.name" />
+					</li>
+					<li>手机号码：
+						<input type="text" class="input-m" ng-model="client.mobile" />
+					</li>
+				</ul>
+				<ul class="input-mix-wrap">
+					<li>注册时间：
+						<input type="text" class="input-m" style="margin-right: 7px;">至
+						<input type="text" class="input-m">
+					</li>
+
+					<li>注册来源：
+						<select class="select-m" name="queryCondition.regSource" id="B_regSource">
+							<option value="">--全部--</option>
+							<option value="DiabetesManagement">血糖高管(IOS)</option>
+							<option value="php_sugar">血糖高管官方网站</option>
+							<option value="bsksugar">血糖高管(Android)</option>
+						</select>
+					</li>
+
+					<li>
+						<input type="button" class="blue-btn" value="查询" ng-click="search()">
+					</li>
+				</ul>
+				<!--<a href="javascript:;">更多>></a>-->
+			</div>
+
+			<div class="form-row clear">
+				<ul class="input-mix-wrap">
+					<li>客户类型：
+						<select class="select-m" name="clientInfo.type" id="type">
+							<option value="">--全部--</option>
+							<option value="1">VIP用户</option>
+							<option value="3">普通用户</option>
+						</select>
+					</li>
+					<li>购买产品类型：
+						<select class="select-m" name="productId">
+							<option value="">--请选择--</option>
+							<option value="10010">月度VIP卡</option>
+							<option value="10011">年度VIP卡</option>
+							<option value="10012">季度VIP卡</option>
+						</select>
+					</li>
+				</ul>
+
+				<ul class="input-mix-wrap">
+					<li>邀请类型：
+						<select class="select-m" name="ddd" id="">
+							<option value="" selected="selected">--全部--</option>
+							<option value="1">医生邀请</option>
+							<option value="9">客户邀请</option>
+						</select>
+					</li>
+					<li>客户邀请码：
+						<input type="text" class="input-m">
+					</li>
+					<li>管理人信息：
+						<select class="select-m" name="queryCondition.createUserChain">
+							<option value="">--全部--</option>
+							<option value="500,1,566,46">许春雪</option>
+						</select>
+						<input type="button" class="text-chaxun-btn blue-btn" value="调整管理用户">
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<span class="checkboxs-title">客户市场等级：</span>
+				<ul class="checkboxs-wrap">
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_0" value="0">
+						<label for="b_0">黑户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_1" value="1">
+						<label for="b_1">排斥</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_2" value="2">
+						<label for="b_2">较排斥</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_3" value="3">
+						<label for="b_3">一般</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_4" value="4">
+						<label for="b_4">有希望</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_5" value="5">
+						<label for="b_5">潜在客户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_6" value="6">
+						<label for="b_6">过期用户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_7" value="7">
+						<label for="b_7">无糖尿病</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_8" value="8">
+						<label for="b_8">医生邀请客户</label>
+					</li>
+					<li>
+						<input type="checkbox" name="bazzaarGradeQuery" id="b_9" value="9">
+						<label for="b_9">无智能机客户</label>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="table-wrap">
+			<table class="table">
+				<thead>
+					<tr>
+						<th width="40">选中</th>
+						<th>客户姓名/注册时间</th>
+						<th width="110">电话</th>
+						<th>性别</th>
+						<th>年龄</th>
+						<th>客户类型/市场等级</th>
+						<th>邀请类型</th>
+						<th>所属区域</th>
+						<th>注册来源</th>
+						<th>最近一次上传</th>
+						<th>购买服务</th>
+						<th width="210">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="client in clientList">
+						<td>
+							<input type="checkbox">
+						</td>
+						<td><a target="" href="javascript:void(0);">{{client.clientName}}</a>
+							<br>{{client.regTime}}</td>
+						<td><a href="javascript:void(0);" title="点击拨号">{{client.mobile}}</a></td>
+						<td>{{client.gender == 0 ? "男":"女"}}</td>
+						<td>{{client.age}}</td>
+						<td>普通用户/一般</td>
+						<td>{{client.invitedType}}</td>
+						<td><a href="javascript:;">{{client.areaId | getAreaId}}</a></td>
+						<td>{{client.source | getSource}}</td>
+						<td>{{client.lastUploadTime}}</td>
+						<td></td>
+						<td class="client-caozuo"><a>分配负责人</a> <a>生成健康报告</a>
+							<br>
+							<a>生成简易报告</a> <a>隐形档案</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">
+							<input type="checkbox" id="allCheck">
+							<label for="allCheck" class="checks-btn">全选</label>&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" id="noCheck">
+							<label for="noCheck" class="checks-btn">全不选</label>
+						</td>
+						<td colspan="9">
+							<!--<div class="page-wrap">
+								<div class="page-num">
+									<span>共有{{ conf.totalItems }}条</span>，<span>每页显示{{ conf.itemsPerPage }}条</span>
+								</div>
+								<ul class="page clear" pager page-object="pagerinfo">
+									<li ng-class="{disabled: conf.currentPage == 1}" ng-click="prevPage()"><a>«</a></li>
+									<li ng-class="{disabled: conf.currentPage == 1}" ng-click="prevPage()"><a>‹</a></li>
+									
+									<li ng-repeat="item in pageList track by $index" ng-class="{active: item == conf.currentPage, separate: item == \'...\'}" ' +
+									'ng-click="changeCurrentPage(item)">' +
+									'<a>{{ item }}</a>' +
+									'</li>' +
+									
+									<li ng-class="{disabled: conf.currentPage == conf.numberOfPages}" ng-click="nextPage()"><a>›</a></li>
+									<li ng-class="{disabled: conf.currentPage == conf.numberOfPages}" ng-click="nextPage()"><a>»</a></li>
+								</ul>
+							</div>-->
+							<tm-pagination conf="paginationConf"></tm-pagination>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div class="form-row form-margin-top">
+			<input type="button" id="chooseSend" class="blue-btn client-btn" value="选择发送">
+			<input type="button" id="allSend" class="blue-btn client-btn" value="全部发送">
+		</div>
+	</form>
+</div>

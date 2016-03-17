@@ -6,16 +6,16 @@ var xtggApp = angular.module('xtggApp', ['ngRoute', 'ClientControllers', 'Client
 xtggApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
-		when('/', {
-				templateUrl: 'partials/client_list.html',
-				controller: 'ClientListController'
-			}).
-			//		when('/phones/:phoneId', {
-			//			templateUrl: 'partials/phone-detail.html',
-			//			controller: 'MyPhoneDetailCtrl'
-			//		}).
+		when('/client/list', {
+			templateUrl: 'partials/client_list.html',
+			controller: 'ClientListController'
+		}).
+		when('/client/unassign-list', {
+			templateUrl: 'partials/client_unassign_list.html',
+			controller: 'ClientUnassignListController'
+		}).
 		otherwise({
-			redirectTo: '/'
+			redirectTo: '/client/list'
 		});
 	}
 ]);
